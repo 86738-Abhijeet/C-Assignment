@@ -24,21 +24,34 @@ Employee emp_init(Employee e)
 }
 
 Employee setSalary(Employee e, double sal){
-  e.salary = sal;
+  e.salary = sal*12;
   return e;
+}
+
+
+double getYearlySalary(Employee e){
+  cout << "Employee yearly salary is : " << e.salary*12 << endl;
+  return e.salary*12;
+}
+
+void getYearlySalaryWithGain(double sal){
+  sal = sal + (sal / 10);
+  cout << "Emplyee yearly salary with 10% gain : " << sal;
 }
 
 void displayEmployeeData(Employee e)
 {
     cout << "\nEmployee name is : " << e.name << endl;
     cout << "Employee last name is : " << e.lastName << endl;
-    cout << "Employee salary is : " << e.salary << endl;
 }
+
 
 int main()
 {
   Employee e1;
   Employee e2 = emp_init(e1);
-  // Employee e3 = setSalary(e1, 5000);
   displayEmployeeData(e2);
+  double salary = getYearlySalary(e2);
+//  cout << "salary " << salary;
+  getYearlySalaryWithGain(salary);
 }
